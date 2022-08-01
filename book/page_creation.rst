@@ -44,9 +44,7 @@ a method inside of it that will be executed when someone goes to ``/lucky/number
 
     class LuckyController
     {
-        /**
-         * @Route("/lucky/number")
-         */
+        #[Route("/lucky/number")]
         public function numberAction()
         {
             $number = rand(0, 100);
@@ -98,9 +96,7 @@ Just add a second method to ``LuckyController``::
     {
         // ...
 
-        /**
-         * @Route("/api/lucky/number")
-         */
+        #[Route("/lucky/number")]
         public function apiNumberAction()
         {
             $data = array(
@@ -131,9 +127,7 @@ You can even shorten this with the handy :class:`Symfony\\Component\\HttpFoundat
     {
         // ...
 
-        /**
-         * @Route("/api/lucky/number")
-         */
+        #[Route("/lucky/number")]
         public function apiNumberAction()
         {
             $data = array(
@@ -162,9 +156,7 @@ at the end:
 
         class LuckyController
         {
-            /**
-             * @Route("/lucky/number/{count}")
-             */
+            #[Route("/lucky/number/{count}")]
             public function numberAction()
             {
                 // ...
@@ -217,9 +209,7 @@ The best part is that you can access this value and use it in your controller::
     class LuckyController
     {
 
-        /**
-         * @Route("/lucky/number/{count}")
-         */
+        #[Route("/lucky/number/{count}")]
         public function numberAction($count)
         {
             $numbers = array();
@@ -290,9 +280,7 @@ To render a Twig template, use a service called ``templating``::
 
     class LuckyController extends Controller
     {
-        /**
-         * @Route("/lucky/number/{count}")
-         */
+        #[Route("/lucky/number/{count}")]
         public function numberAction($count)
         {
             // ...
@@ -321,9 +309,7 @@ also get a lot of shortcut methods, like ``render()``::
     // src/AppBundle/Controller/LuckyController.php
     // ...
 
-    /**
-     * @Route("/lucky/number/{count}")
-     */
+    #[Route("/lucky/number/{count}")]
     public function numberAction($count)
     {
         // ...
